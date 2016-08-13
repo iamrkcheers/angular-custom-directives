@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="directives.js"></script>
+</head>
+
+<body ng-app="app">
+    <h1>This example relates to #CustomDirectives</h1>
+    <display-date></display-date>
+    <div ng-controller="timectrl">
+        <button ng-click="showtime()">Start time</button>
+        <display-time></display-time>
+    </div>
+    <div ng-controller="ctrl">
+        <h3>My name is {{fn}} {{ln}} !</h3>
+        <my-name></my-name>
+        <!--commentlevel-->
+    </div>
+    <h3>My name is {{fn}} !</h3>
+    <gps></gps>
+    <h1 mouse-play>Click on me, please !</h1>
+    <h1 class="classlevel"></h1>
+</body>
+
+</html>
