@@ -40,8 +40,8 @@ app.directive("myName",function(){
 
 var gpspos=0;
 function getLocation(){
-    if(navigator.geoLocation){
-        navigator.geoLocation.getCurrentPosition(showPosition);
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
     }
     else{
         gpspos.innerHTML="'Geo Location' property is not supported by the browser !"
@@ -55,6 +55,7 @@ app.directive("gps",function(){
         controller:"ctrl",
         link:function(scope,element,attrs){
             alert(scope.fn);
+            alert(element[0].nodeName);
             gpspos=element[0];
             getLocation();
         },
@@ -94,5 +95,6 @@ app.directive("commentlevel",function(){
     return {
         template: "<h1>This is a comment level example !</h1>",
         restrict: "M",
+        replace: true
     }
 });
